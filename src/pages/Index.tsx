@@ -180,11 +180,100 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-16 border-b border-gray-300 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold mb-2 text-black">Блок оформления сделки и юридической поддержки</h2>
+            <p className="text-gray-600">Описание процесса и юридического сопровождения</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            {[
+              { title: 'Этап 1', desc: 'Описание первого этапа процесса' },
+              { title: 'Этап 2', desc: 'Описание второго этапа процесса' },
+              { title: 'Этап 3', desc: 'Описание третьего этапа процесса' },
+              { title: 'Этап 4', desc: 'Описание четвёртого этапа процесса' }
+            ].map((item, i) => (
+              <Card key={i} className="border-2 border-gray-300 bg-white">
+                <CardContent className="pt-6">
+                  <div className="flex gap-4">
+                    <div className="w-10 h-10 border-2 border-black rounded flex items-center justify-center font-bold flex-shrink-0">
+                      {i + 1}
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2 text-black">{item.title}</h3>
+                      <p className="text-gray-600 text-sm">{item.desc}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 border-b border-gray-300">
+        <div className="container mx-auto px-4">
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold mb-2 text-black">Блок отзывов клиентов</h2>
+            <p className="text-gray-600">Реальные истории успеха</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { name: 'Клиент 1', role: 'Роль', text: 'Текст отзыва о работе с компанией и полученном результате' },
+              { name: 'Клиент 2', role: 'Роль', text: 'Текст отзыва о работе с компанией и полученном результате' },
+              { name: 'Клиент 3', role: 'Роль', text: 'Текст отзыва о работе с компанией и полученном результате' }
+            ].map((review, i) => (
+              <Card key={i} className="border-2 border-gray-300">
+                <CardContent className="pt-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 border-2 border-black rounded-full"></div>
+                    <div>
+                      <p className="font-semibold text-black">{review.name}</p>
+                      <p className="text-sm text-gray-600">{review.role}</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-gray-600">"{review.text}"</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 border-b border-gray-300 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <div className="mb-12 text-center">
+              <h2 className="text-3xl font-bold mb-2 text-black">Блок FAQ</h2>
+              <p className="text-gray-600">Ответы на частые вопросы</p>
+            </div>
+
+            <div className="space-y-4">
+              {[
+                { q: 'Вопрос 1', a: 'Развёрнутый ответ на первый частый вопрос пользователей' },
+                { q: 'Вопрос 2', a: 'Развёрнутый ответ на второй частый вопрос пользователей' },
+                { q: 'Вопрос 3', a: 'Развёрнутый ответ на третий частый вопрос пользователей' },
+                { q: 'Вопрос 4', a: 'Развёрнутый ответ на четвёртый частый вопрос пользователей' }
+              ].map((item, i) => (
+                <Card key={i} className="border-2 border-gray-300 bg-white">
+                  <CardContent className="p-6">
+                    <h3 className="font-semibold text-black mb-2">{item.q}</h3>
+                    <p className="text-sm text-gray-600">{item.a}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="contacts" className="py-16 border-b border-gray-300">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="mb-12 text-center">
-              <h2 className="text-3xl font-bold mb-2 text-black">Блок контактов</h2>
+              <h2 className="text-3xl font-bold mb-2 text-black">Блок контактов и обратной связи</h2>
               <p className="text-gray-600">Способы связи с компанией</p>
             </div>
             
@@ -225,36 +314,36 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="text-xl font-bold mb-4">ДомПро</div>
-              <p className="text-sm text-gray-400">Платформа для безопасной аренды и инвестиций</p>
+              <div className="text-xl font-bold mb-4">Логотип</div>
+              <p className="text-sm text-gray-400">Краткое описание компании</p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Услуги</h4>
+              <h4 className="font-semibold mb-4">Колонка 1</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#search">Поиск жилья</a></li>
-                <li><a href="#owners">Для владельцев</a></li>
-                <li><a href="#invest">Инвестиции</a></li>
+                <li><a href="#">Ссылка</a></li>
+                <li><a href="#">Ссылка</a></li>
+                <li><a href="#">Ссылка</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Компания</h4>
+              <h4 className="font-semibold mb-4">Колонка 2</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#">О нас</a></li>
-                <li><a href="#">Блог</a></li>
-                <li><a href="#">Партнёрам</a></li>
+                <li><a href="#">Ссылка</a></li>
+                <li><a href="#">Ссылка</a></li>
+                <li><a href="#">Ссылка</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Поддержка</h4>
+              <h4 className="font-semibold mb-4">Колонка 3</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#">Помощь</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Условия использования</a></li>
+                <li><a href="#">Ссылка</a></li>
+                <li><a href="#">Ссылка</a></li>
+                <li><a href="#">Ссылка</a></li>
               </ul>
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
-            <p>© 2024 ДомПро. Все права защищены.</p>
+            <p>© 2024 Копирайт. Все права защищены.</p>
           </div>
         </div>
       </footer>
