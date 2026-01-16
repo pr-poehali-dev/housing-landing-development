@@ -53,7 +53,27 @@ const Index = () => {
             <p className="text-gray-600">Основные преимущества продукта и форма захвата email</p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card className="border-2 border-gray-400 md:col-span-2">
+              <CardContent className="p-8">
+                <div className="max-w-2xl mx-auto text-center">
+                  <div className="w-12 h-12 border-2 border-black rounded mx-auto mb-4"></div>
+                  <h3 className="text-2xl font-semibold mb-3 text-black">Лид-магнит с бесплатным предложением</h3>
+                  <p className="text-gray-600 mb-6">Описание того, что получит пользователь</p>
+                  <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                    <Input 
+                      placeholder="Email" 
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="flex-1 border-gray-400"
+                    />
+                    <Button className="bg-black text-white hover:bg-gray-800">Получить</Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
             {[
               { title: 'Преимущество 1', desc: 'Короткое описание первого преимущества' },
               { title: 'Преимущество 2', desc: 'Короткое описание второго преимущества' },
@@ -61,31 +81,24 @@ const Index = () => {
             ].map((item, i) => (
               <Card key={i} className="border-2 border-gray-300">
                 <CardContent className="pt-6">
-                  <div className="w-12 h-12 border-2 border-black rounded mb-4"></div>
-                  <h3 className="text-lg font-semibold mb-2 text-black">{item.title}</h3>
-                  <p className="text-gray-600 text-sm">{item.desc}</p>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 border-2 border-black rounded flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2 text-black">{item.title}</h3>
+                      <p className="text-gray-600 text-sm">{item.desc}</p>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             ))}
-          </div>
 
-          <Card className="border-2 border-gray-400">
-            <CardContent className="p-8 text-center">
-              <div className="w-12 h-12 border-2 border-black rounded mx-auto mb-4"></div>
-              <h3 className="text-xl font-semibold mb-3 text-black">Лид-магнит с бесплатным предложением</h3>
-              <p className="text-gray-600 mb-6">Описание того, что получит пользователь</p>
-              <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <Input 
-                  placeholder="Email" 
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 border-gray-400"
-                />
-                <Button className="bg-black text-white hover:bg-gray-800">Получить</Button>
-              </div>
-            </CardContent>
-          </Card>
+            <Card className="border-2 border-black bg-black text-white md:col-span-2">
+              <CardContent className="p-8 text-center">
+                <h3 className="text-xl font-semibold mb-2">Дополнительная выгода</h3>
+                <p className="text-gray-300 text-sm">Акцент на особом предложении для усиления конверсии</p>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
@@ -96,17 +109,29 @@ const Index = () => {
             <p className="text-gray-600">Три карточки с описанием того, как продукт решает боли аудитории</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="border-2 border-gray-300 bg-white md:row-span-2">
+              <CardContent className="pt-6 h-full flex flex-col">
+                <div className="w-16 h-16 border-2 border-black rounded mb-4"></div>
+                <h3 className="text-xl font-semibold mb-3 text-black">Решение проблемы 1</h3>
+                <p className="text-gray-600 text-sm mb-4 flex-grow">Как мы решаем эту боль клиента. Развёрнутое описание с деталями подхода</p>
+                <Button variant="outline" className="border-black text-black hover:bg-black hover:text-white w-full">Подробнее</Button>
+              </CardContent>
+            </Card>
+
             {[
-              { title: 'Решение проблемы 1', desc: 'Как мы решаем эту боль клиента' },
               { title: 'Решение проблемы 2', desc: 'Как мы решаем эту боль клиента' },
               { title: 'Решение проблемы 3', desc: 'Как мы решаем эту боль клиента' }
             ].map((item, i) => (
-              <Card key={i} className="border-2 border-gray-300 bg-white">
+              <Card key={i} className="border-2 border-gray-300 bg-white md:col-span-2">
                 <CardContent className="pt-6">
-                  <div className="w-12 h-12 border-2 border-black rounded mb-4"></div>
-                  <h3 className="text-lg font-semibold mb-2 text-black">{item.title}</h3>
-                  <p className="text-gray-600 text-sm">{item.desc}</p>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 border-2 border-black rounded flex-shrink-0"></div>
+                    <div className="flex-grow">
+                      <h3 className="text-lg font-semibold mb-2 text-black">{item.title}</h3>
+                      <p className="text-gray-600 text-sm">{item.desc}</p>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -121,37 +146,41 @@ const Index = () => {
             <p className="text-gray-600">Четыре важные цифры компании и форма для сбора контактов</p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6 mb-12">
-            {[
-              { value: 'Цифра 1', label: 'Метрика' },
-              { value: 'Цифра 2', label: 'Метрика' },
-              { value: 'Цифра 3', label: 'Метрика' },
-              { value: 'Цифра 4', label: 'Метрика' }
-            ].map((stat, i) => (
-              <Card key={i} className="border-2 border-gray-300 text-center">
-                <CardContent className="pt-6">
-                  <div className="text-3xl font-bold text-black mb-2">{stat.value}</div>
-                  <p className="text-sm text-gray-600">{stat.label}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <Card className="border-2 border-gray-400">
-            <CardContent className="p-8 text-center">
-              <div className="w-12 h-12 border-2 border-black rounded mx-auto mb-4"></div>
-              <h3 className="text-xl font-semibold mb-3 text-black">Форма захвата лида</h3>
-              <p className="text-gray-600 mb-6">Описание выгоды от заполнения формы</p>
-              <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <Input 
-                  placeholder="Контакт" 
-                  type="tel"
-                  className="flex-1 border-gray-400"
-                />
-                <Button className="bg-black text-white hover:bg-gray-800">Отправить</Button>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="md:col-span-2">
+              <div className="grid grid-cols-2 gap-6 mb-8">
+                {[
+                  { value: 'Цифра 1', label: 'Метрика' },
+                  { value: 'Цифра 2', label: 'Метрика' },
+                  { value: 'Цифра 3', label: 'Метрика' },
+                  { value: 'Цифра 4', label: 'Метрика' }
+                ].map((stat, i) => (
+                  <Card key={i} className="border-2 border-gray-300 text-center">
+                    <CardContent className="pt-6">
+                      <div className="text-4xl font-bold text-black mb-2">{stat.value}</div>
+                      <p className="text-sm text-gray-600">{stat.label}</p>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
-            </CardContent>
-          </Card>
+            </div>
+
+            <Card className="border-2 border-gray-400 md:row-span-1">
+              <CardContent className="p-8 h-full flex flex-col justify-center">
+                <div className="w-12 h-12 border-2 border-black rounded mb-4"></div>
+                <h3 className="text-xl font-semibold mb-3 text-black">Форма захвата лида</h3>
+                <p className="text-gray-600 mb-6 text-sm">Описание выгоды от заполнения формы</p>
+                <div className="space-y-3">
+                  <Input 
+                    placeholder="Контакт" 
+                    type="tel"
+                    className="border-gray-400"
+                  />
+                  <Button className="bg-black text-white hover:bg-gray-800 w-full">Отправить</Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
@@ -162,17 +191,28 @@ const Index = () => {
             <p className="text-gray-600">Три гарантии, которые снимают возражения клиентов</p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card className="border-2 border-black bg-black text-white">
+              <CardContent className="pt-6 pb-6">
+                <div className="w-12 h-12 border-2 border-white rounded mb-4"></div>
+                <h3 className="text-xl font-semibold mb-2">Гарантия 1</h3>
+                <p className="text-gray-300 text-sm">Описание первой гарантии</p>
+              </CardContent>
+            </Card>
+
             {[
-              { title: 'Гарантия 1', desc: 'Описание первой гарантии' },
               { title: 'Гарантия 2', desc: 'Описание второй гарантии' },
               { title: 'Гарантия 3', desc: 'Описание третьей гарантии' }
             ].map((item, i) => (
-              <Card key={i} className="border-2 border-gray-300 text-center bg-white">
+              <Card key={i} className="border-2 border-gray-300 bg-white">
                 <CardContent className="pt-6">
-                  <div className="w-12 h-12 border-2 border-black rounded mx-auto mb-4"></div>
-                  <h3 className="text-lg font-semibold mb-2 text-black">{item.title}</h3>
-                  <p className="text-gray-600 text-sm">{item.desc}</p>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 border-2 border-black rounded flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2 text-black">{item.title}</h3>
+                      <p className="text-gray-600 text-sm">{item.desc}</p>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             ))}
