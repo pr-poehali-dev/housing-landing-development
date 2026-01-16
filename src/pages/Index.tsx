@@ -109,32 +109,38 @@ const Index = () => {
             <p className="text-gray-600">Три карточки с описанием того, как продукт решает боли аудитории</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-2 border-gray-300 bg-white md:row-span-2">
-              <CardContent className="pt-6 h-full flex flex-col">
-                <div className="w-16 h-16 border-2 border-black rounded mb-4"></div>
-                <h3 className="text-xl font-semibold mb-3 text-black">Решение проблемы 1</h3>
-                <p className="text-gray-600 text-sm mb-4 flex-grow">Как мы решаем эту боль клиента. Развёрнутое описание с деталями подхода</p>
-                <Button variant="outline" className="border-black text-black hover:bg-black hover:text-white w-full">Подробнее</Button>
+          <div className="grid md:grid-cols-12 gap-6">
+            <Card className="border-2 border-black bg-black text-white md:col-span-7">
+              <CardContent className="p-8">
+                <div className="flex items-start gap-6">
+                  <div className="w-20 h-20 border-2 border-white rounded flex-shrink-0"></div>
+                  <div className="flex-grow">
+                    <h3 className="text-2xl font-semibold mb-3">Экономия времени на 80%</h3>
+                    <p className="text-gray-300 text-sm mb-4 leading-relaxed">Автоматизируем рутинные процессы и сокращаем время на поиск объектов с нескольких дней до нескольких часов</p>
+                    <Button variant="outline" className="border-white text-white hover:bg-white hover:text-black">Узнать подробнее</Button>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
-            {[
-              { title: 'Решение проблемы 2', desc: 'Как мы решаем эту боль клиента' },
-              { title: 'Решение проблемы 3', desc: 'Как мы решаем эту боль клиента' }
-            ].map((item, i) => (
-              <Card key={i} className="border-2 border-gray-300 bg-white md:col-span-2">
-                <CardContent className="pt-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 border-2 border-black rounded flex-shrink-0"></div>
-                    <div className="flex-grow">
-                      <h3 className="text-lg font-semibold mb-2 text-black">{item.title}</h3>
-                      <p className="text-gray-600 text-sm">{item.desc}</p>
+            <div className="md:col-span-5 space-y-6">
+              {[
+                { title: 'Прозрачность сделок', desc: 'Все этапы под контролем. Видите историю объекта и документы в одном месте' },
+                { title: 'Юридическая защита', desc: 'Проверка объектов и сопровождение сделки профессиональными юристами' }
+              ].map((item, i) => (
+                <Card key={i} className="border-2 border-gray-300 bg-white">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 border-2 border-black rounded flex-shrink-0"></div>
+                      <div className="flex-grow">
+                        <h3 className="text-lg font-semibold mb-2 text-black">{item.title}</h3>
+                        <p className="text-gray-600 text-sm">{item.desc}</p>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -142,41 +148,58 @@ const Index = () => {
       <section id="invest" className="py-16 border-b border-gray-300">
         <div className="container mx-auto px-4">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-2 text-black">Блок с ключевыми метриками и формой захвата</h2>
-            <p className="text-gray-600">Четыре важные цифры компании и форма для сбора контактов</p>
+            <h2 className="text-3xl font-bold mb-2 text-black">Инвестиции и доходность</h2>
+            <p className="text-gray-600">Прозрачная статистика платформы и калькулятор дохода</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="md:col-span-2">
-              <div className="grid grid-cols-2 gap-6 mb-8">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-6">
+              <Card className="border-2 border-black bg-black text-white">
+                <CardContent className="p-8 text-center">
+                  <div className="text-5xl font-bold mb-2">15-25%</div>
+                  <p className="text-gray-300 text-sm">Средняя доходность в год</p>
+                </CardContent>
+              </Card>
+
+              <div className="grid grid-cols-2 gap-6">
                 {[
-                  { value: 'Цифра 1', label: 'Метрика' },
-                  { value: 'Цифра 2', label: 'Метрика' },
-                  { value: 'Цифра 3', label: 'Метрика' },
-                  { value: 'Цифра 4', label: 'Метрика' }
+                  { value: '2.5 млрд ₽', label: 'Объем инвестиций' },
+                  { value: '1200+', label: 'Завершенных сделок' },
+                  { value: 'от 500k ₽', label: 'Минимальный порог' },
+                  { value: '98%', label: 'Уровень одобрения' }
                 ].map((stat, i) => (
                   <Card key={i} className="border-2 border-gray-300 text-center">
                     <CardContent className="pt-6">
-                      <div className="text-4xl font-bold text-black mb-2">{stat.value}</div>
-                      <p className="text-sm text-gray-600">{stat.label}</p>
+                      <div className="text-2xl font-bold text-black mb-2">{stat.value}</div>
+                      <p className="text-xs text-gray-600">{stat.label}</p>
                     </CardContent>
                   </Card>
                 ))}
               </div>
             </div>
 
-            <Card className="border-2 border-gray-400 md:row-span-1">
-              <CardContent className="p-8 h-full flex flex-col justify-center">
+            <Card className="border-2 border-gray-400">
+              <CardContent className="p-8">
                 <div className="w-12 h-12 border-2 border-black rounded mb-4"></div>
-                <h3 className="text-xl font-semibold mb-3 text-black">Форма захвата лида</h3>
-                <p className="text-gray-600 mb-6 text-sm">Описание выгоды от заполнения формы</p>
-                <div className="space-y-3">
-                  <Input 
-                    placeholder="Контакт" 
-                    type="tel"
-                    className="border-gray-400"
-                  />
-                  <Button className="bg-black text-white hover:bg-gray-800 w-full">Отправить</Button>
+                <h3 className="text-2xl font-semibold mb-3 text-black">Рассчитайте свой доход</h3>
+                <p className="text-gray-600 mb-6 text-sm">Оставьте контакт — пришлем персональный расчет доходности с учетом ваших целей</p>
+                <div className="space-y-4">
+                  <div>
+                    <label className="text-sm text-gray-600 mb-2 block">Сумма инвестиций</label>
+                    <Input 
+                      placeholder="Например, 1 000 000 ₽" 
+                      className="border-gray-400"
+                    />
+                  </div>
+                  <div>
+                    <label className="text-sm text-gray-600 mb-2 block">Ваш телефон</label>
+                    <Input 
+                      placeholder="+7 (999) 123-45-67" 
+                      type="tel"
+                      className="border-gray-400"
+                    />
+                  </div>
+                  <Button className="bg-black text-white hover:bg-gray-800 w-full">Получить расчет</Button>
                 </div>
               </CardContent>
             </Card>
