@@ -13,9 +13,9 @@ const Index = () => {
         <div className="container mx-auto px-4 flex items-center justify-between">
           <div className="text-xl font-bold text-black">ДомПро</div>
           <nav className="hidden md:flex gap-6 text-sm">
-            <a href="#search" className="text-gray-700 hover:text-black">Поиск жилья</a>
-            <a href="#owners" className="text-gray-700 hover:text-black">Владельцам</a>
-            <a href="#invest" className="text-gray-700 hover:text-black">Инвесторам</a>
+            <a href="#search" className="text-gray-700 hover:text-black">Раздел 1</a>
+            <a href="#owners" className="text-gray-700 hover:text-black">Раздел 2</a>
+            <a href="#invest" className="text-gray-700 hover:text-black">Раздел 3</a>
             <a href="#contacts" className="text-gray-700 hover:text-black">Контакты</a>
           </nav>
           <Button variant="outline" className="hidden md:block border-black text-black hover:bg-black hover:text-white">
@@ -28,18 +28,18 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">
-              Удобное жильё для семей и инвесторов
+              Главный заголовок с УТП
             </h1>
             <p className="text-lg text-gray-600 mb-8">
-              Прозрачная аренда, проверенные арендаторы и высокодоходные инвестиции в недвижимость
+              Краткое описание преимуществ и основной ценности сервиса
             </p>
             <div className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
               <Input 
-                placeholder="Введите город или район" 
+                placeholder="Поле для поиска" 
                 className="flex-1 border-gray-400"
               />
               <Button className="bg-black text-white hover:bg-gray-800">
-                Найти жильё
+                Кнопка действия
               </Button>
             </div>
           </div>
@@ -49,15 +49,15 @@ const Index = () => {
       <section id="search" className="py-16 border-b border-gray-300">
         <div className="container mx-auto px-4">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-2 text-black">Поиск жилья для арендаторов</h2>
-            <p className="text-gray-600">Подходящие варианты для семей и студентов</p>
+            <h2 className="text-3xl font-bold mb-2 text-black">Блок для первой целевой аудитории</h2>
+            <p className="text-gray-600">Описание решения для этой аудитории</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {[
-              { title: 'Для семей с детьми', desc: 'Просторные квартиры в жилых районах' },
-              { title: 'Для студентов', desc: 'Доступное жильё рядом с вузами' },
-              { title: 'Проверенные варианты', desc: 'Все объекты проходят верификацию' }
+              { title: 'Преимущество 1', desc: 'Короткое описание первого преимущества' },
+              { title: 'Преимущество 2', desc: 'Короткое описание второго преимущества' },
+              { title: 'Преимущество 3', desc: 'Короткое описание третьего преимущества' }
             ].map((item, i) => (
               <Card key={i} className="border-2 border-gray-300">
                 <CardContent className="pt-6">
@@ -72,17 +72,17 @@ const Index = () => {
           <Card className="border-2 border-gray-400">
             <CardContent className="p-8 text-center">
               <div className="w-12 h-12 border-2 border-black rounded mx-auto mb-4"></div>
-              <h3 className="text-xl font-semibold mb-3 text-black">Бесплатный гид по аренде жилья</h3>
-              <p className="text-gray-600 mb-6">Получите подробное руководство для семей с детьми и студентов</p>
+              <h3 className="text-xl font-semibold mb-3 text-black">Лид-магнит с бесплатным предложением</h3>
+              <p className="text-gray-600 mb-6">Описание того, что получит пользователь</p>
               <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                 <Input 
-                  placeholder="Ваш email" 
+                  placeholder="Email" 
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="flex-1 border-gray-400"
                 />
-                <Button className="bg-black text-white hover:bg-gray-800">Получить гид</Button>
+                <Button className="bg-black text-white hover:bg-gray-800">Получить</Button>
               </div>
             </CardContent>
           </Card>
@@ -92,15 +92,15 @@ const Index = () => {
       <section id="owners" className="py-16 border-b border-gray-300 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-2 text-black">Владельцам недвижимости</h2>
-            <p className="text-gray-600">Сдавайте жильё с гарантией безопасности</p>
+            <h2 className="text-3xl font-bold mb-2 text-black">Блок для второй целевой аудитории</h2>
+            <p className="text-gray-600">Описание решения для этой аудитории</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { title: 'Проверка арендаторов', desc: 'Полная верификация каждого арендатора' },
-              { title: 'Гарантия платежей', desc: 'Страхование от неуплаты аренды' },
-              { title: 'Юридическая поддержка', desc: 'Помощь в оформлении договоров' }
+              { title: 'Решение проблемы 1', desc: 'Как мы решаем эту боль клиента' },
+              { title: 'Решение проблемы 2', desc: 'Как мы решаем эту боль клиента' },
+              { title: 'Решение проблемы 3', desc: 'Как мы решаем эту боль клиента' }
             ].map((item, i) => (
               <Card key={i} className="border-2 border-gray-300 bg-white">
                 <CardContent className="pt-6">
@@ -117,16 +117,16 @@ const Index = () => {
       <section id="invest" className="py-16 border-b border-gray-300">
         <div className="container mx-auto px-4">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-2 text-black">Инвестиции в недвижимость</h2>
-            <p className="text-gray-600">Высокая доходность и прозрачная аналитика</p>
+            <h2 className="text-3xl font-bold mb-2 text-black">Блок для третьей целевой аудитории</h2>
+            <p className="text-gray-600">Описание решения для этой аудитории</p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-6 mb-12">
             {[
-              { value: '12-15%', label: 'Средняя доходность' },
-              { value: '500+', label: 'Объектов в портфеле' },
-              { value: '98%', label: 'Заполняемость' },
-              { value: '24/7', label: 'Поддержка инвесторов' }
+              { value: 'Цифра 1', label: 'Метрика' },
+              { value: 'Цифра 2', label: 'Метрика' },
+              { value: 'Цифра 3', label: 'Метрика' },
+              { value: 'Цифра 4', label: 'Метрика' }
             ].map((stat, i) => (
               <Card key={i} className="border-2 border-gray-300 text-center">
                 <CardContent className="pt-6">
@@ -140,15 +140,15 @@ const Index = () => {
           <Card className="border-2 border-gray-400">
             <CardContent className="p-8 text-center">
               <div className="w-12 h-12 border-2 border-black rounded mx-auto mb-4"></div>
-              <h3 className="text-xl font-semibold mb-3 text-black">Консультация по инвестициям</h3>
-              <p className="text-gray-600 mb-6">Получите персональный расчёт доходности от эксперта</p>
+              <h3 className="text-xl font-semibold mb-3 text-black">Форма захвата лида</h3>
+              <p className="text-gray-600 mb-6">Описание выгоды от заполнения формы</p>
               <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                 <Input 
-                  placeholder="Ваш телефон" 
+                  placeholder="Контакт" 
                   type="tel"
                   className="flex-1 border-gray-400"
                 />
-                <Button className="bg-black text-white hover:bg-gray-800">Получить консультацию</Button>
+                <Button className="bg-black text-white hover:bg-gray-800">Отправить</Button>
               </div>
             </CardContent>
           </Card>
@@ -158,15 +158,15 @@ const Index = () => {
       <section className="py-16 border-b border-gray-300 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-2 text-black">Гарантия безопасности</h2>
-            <p className="text-gray-600">Защита от всех видов рисков</p>
+            <h2 className="text-3xl font-bold mb-2 text-black">Блок с гарантиями</h2>
+            <p className="text-gray-600">Почему нам можно доверять</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { title: 'Страхование рисков', desc: 'Полное страхование от финансовых потерь' },
-              { title: 'Безопасные расчёты', desc: 'Все платежи через защищённую систему' },
-              { title: 'Гарантия возврата', desc: 'Компенсация в случае срыва сделки' }
+              { title: 'Гарантия 1', desc: 'Описание первой гарантии' },
+              { title: 'Гарантия 2', desc: 'Описание второй гарантии' },
+              { title: 'Гарантия 3', desc: 'Описание третьей гарантии' }
             ].map((item, i) => (
               <Card key={i} className="border-2 border-gray-300 text-center bg-white">
                 <CardContent className="pt-6">
@@ -184,15 +184,15 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="mb-12 text-center">
-              <h2 className="text-3xl font-bold mb-2 text-black">Контакты</h2>
-              <p className="text-gray-600">Свяжитесь с нами удобным способом</p>
+              <h2 className="text-3xl font-bold mb-2 text-black">Блок контактов</h2>
+              <p className="text-gray-600">Способы связи с компанией</p>
             </div>
             
             <div className="grid md:grid-cols-3 gap-6 mb-12">
               {[
-                { title: '+7 (495) 123-45-67', desc: 'Звонки с 9:00 до 21:00' },
-                { title: 'info@dompro.ru', desc: 'Ответим в течение часа' },
-                { title: 'Онлайн-чат', desc: 'Круглосуточная поддержка' }
+                { title: 'Способ связи 1', desc: 'Время работы' },
+                { title: 'Способ связи 2', desc: 'Время работы' },
+                { title: 'Способ связи 3', desc: 'Время работы' }
               ].map((contact, i) => (
                 <Card key={i} className="border-2 border-gray-300 text-center">
                   <CardContent className="pt-6">
@@ -206,9 +206,9 @@ const Index = () => {
 
             <Card className="border-2 border-gray-400">
               <CardContent className="p-8">
-                <h3 className="text-lg font-bold mb-6 text-center text-black">Напишите нам</h3>
+                <h3 className="text-lg font-bold mb-6 text-center text-black">Форма обратной связи</h3>
                 <div className="space-y-4">
-                  <Input placeholder="Ваше имя" className="border-gray-400" />
+                  <Input placeholder="Имя" className="border-gray-400" />
                   <Input placeholder="Email" type="email" className="border-gray-400" />
                   <Input placeholder="Сообщение" className="border-gray-400" />
                   <Button className="w-full bg-black text-white hover:bg-gray-800">
