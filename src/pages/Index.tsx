@@ -49,8 +49,8 @@ const Index = () => {
       <section id="search" className="py-16 border-b border-gray-300">
         <div className="container mx-auto px-4">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-2 text-black">Блок для первой целевой аудитории</h2>
-            <p className="text-gray-600">Описание решения для этой аудитории</p>
+            <h2 className="text-3xl font-bold mb-2 text-black">Блок с тремя преимуществами и лид-магнитом</h2>
+            <p className="text-gray-600">Основные преимущества продукта и форма захвата email</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -92,8 +92,8 @@ const Index = () => {
       <section id="owners" className="py-16 border-b border-gray-300 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-2 text-black">Блок для второй целевой аудитории</h2>
-            <p className="text-gray-600">Описание решения для этой аудитории</p>
+            <h2 className="text-3xl font-bold mb-2 text-black">Блок с решением проблем клиентов</h2>
+            <p className="text-gray-600">Три карточки с описанием того, как продукт решает боли аудитории</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -117,8 +117,8 @@ const Index = () => {
       <section id="invest" className="py-16 border-b border-gray-300">
         <div className="container mx-auto px-4">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-2 text-black">Блок для третьей целевой аудитории</h2>
-            <p className="text-gray-600">Описание решения для этой аудитории</p>
+            <h2 className="text-3xl font-bold mb-2 text-black">Блок с ключевыми метриками и формой захвата</h2>
+            <p className="text-gray-600">Четыре важные цифры компании и форма для сбора контактов</p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-6 mb-12">
@@ -158,8 +158,8 @@ const Index = () => {
       <section className="py-16 border-b border-gray-300 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-2 text-black">Блок с гарантиями</h2>
-            <p className="text-gray-600">Почему нам можно доверять</p>
+            <h2 className="text-3xl font-bold mb-2 text-black">Блок с гарантиями и доверием</h2>
+            <p className="text-gray-600">Три гарантии, которые снимают возражения клиентов</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-6">
@@ -183,8 +183,8 @@ const Index = () => {
       <section className="py-16 border-b border-gray-300 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-2 text-black">Блок оформления сделки и юридической поддержки</h2>
-            <p className="text-gray-600">Описание процесса и юридического сопровождения</p>
+            <h2 className="text-3xl font-bold mb-2 text-black">Блок с этапами работы</h2>
+            <p className="text-gray-600">Четыре последовательных шага процесса взаимодействия</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 mb-12">
@@ -215,8 +215,8 @@ const Index = () => {
       <section className="py-16 border-b border-gray-300">
         <div className="container mx-auto px-4">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-2 text-black">Блок отзывов клиентов</h2>
-            <p className="text-gray-600">Реальные истории успеха</p>
+            <h2 className="text-3xl font-bold mb-2 text-black">Блок социальных доказательств</h2>
+            <p className="text-gray-600">Три отзыва клиентов с именами и ролями</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -246,8 +246,8 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="mb-12 text-center">
-              <h2 className="text-3xl font-bold mb-2 text-black">Блок FAQ</h2>
-              <p className="text-gray-600">Ответы на частые вопросы</p>
+              <h2 className="text-3xl font-bold mb-2 text-black">Блок частых вопросов</h2>
+              <p className="text-gray-600">Четыре вопроса-ответа для снятия возражений</p>
             </div>
 
             <div className="space-y-4">
@@ -273,8 +273,8 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="mb-12 text-center">
-              <h2 className="text-3xl font-bold mb-2 text-black">Блок контактов и обратной связи</h2>
-              <p className="text-gray-600">Способы связи с компанией</p>
+              <h2 className="text-3xl font-bold mb-2 text-black">Блок контактов и форма связи</h2>
+              <p className="text-gray-600">Три способа связи и форма обратной связи</p>
             </div>
             
             <div className="grid md:grid-cols-3 gap-6 mb-12">
