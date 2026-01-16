@@ -148,77 +148,53 @@ const Index = () => {
       <section className="py-16 border-b border-gray-300 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-2 text-black">Оформление аренды и юридическое сопровождение</h2>
-            <p className="text-gray-600">Полный цикл поддержки сделки от проверки до подписания</p>
+            <h2 className="text-3xl font-bold mb-2 text-black">Юридическая поддержка на всех этапах</h2>
+            <p className="text-gray-600">Безопасность сделки и защита ваших интересов от первой встречи до передачи ключей</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-2 border-black bg-white">
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="border-2 border-black bg-black text-white md:col-span-2">
               <CardContent className="p-8">
-                <div className="w-16 h-16 border-2 border-black rounded-full flex items-center justify-center text-2xl font-bold mb-6">1</div>
-                <h3 className="text-2xl font-semibold mb-4 text-black">Оформление аренды</h3>
-                <ul className="space-y-3 mb-6">
-                  {[
-                    'Подготовка и проверка договора аренды',
-                    'Согласование условий с собственником',
-                    'Регистрация договора в Росреестре',
-                    'Оформление акта приема-передачи',
-                    'Консультация по налоговым вопросам'
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <div className="w-6 h-6 border-2 border-black rounded flex-shrink-0 mt-0.5"></div>
-                      <span className="text-gray-700 text-sm">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-sm text-gray-600 bg-gray-50 p-4 rounded border border-gray-300">
-                  <strong>Срок:</strong> 3-5 рабочих дней<br/>
-                  <strong>Стоимость:</strong> от 15 000 ₽
+                <div className="w-16 h-16 border-2 border-white rounded mb-6"></div>
+                <h3 className="text-2xl font-semibold mb-4">Проверка объекта и документов</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  Полная юридическая экспертиза недвижимости: анализ правоустанавливающих документов, 
+                  проверка истории переходов права собственности, выявление обременений и рисков. 
+                  Защищаем от мошенничества и скрытых проблем.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-black bg-black text-white">
+            <Card className="border-2 border-gray-300 bg-white">
               <CardContent className="p-8">
-                <div className="w-16 h-16 border-2 border-white rounded-full flex items-center justify-center text-2xl font-bold mb-6">2</div>
-                <h3 className="text-2xl font-semibold mb-4">Юридическое сопровождение</h3>
-                <ul className="space-y-3 mb-6">
-                  {[
-                    'Полная проверка юридической чистоты объекта',
-                    'Анализ правоустанавливающих документов',
-                    'Проверка собственника и наличия обременений',
-                    'Сопровождение на всех этапах сделки',
-                    'Защита интересов при возникновении споров',
-                    'Постсопровождение в течение 3 месяцев'
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <div className="w-6 h-6 border-2 border-white rounded flex-shrink-0 mt-0.5"></div>
-                      <span className="text-gray-300 text-sm">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-sm text-gray-300 bg-white/10 p-4 rounded border border-white/20">
-                  <strong>Срок:</strong> от момента заявки до завершения сделки<br/>
-                  <strong>Стоимость:</strong> от 25 000 ₽
+                <div className="w-12 h-12 border-2 border-black rounded mb-4"></div>
+                <h3 className="text-lg font-semibold mb-3 text-black">Подготовка договоров</h3>
+                <p className="text-gray-600 text-sm">
+                  Составление и проверка всех необходимых документов с учётом ваших интересов
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-gray-300 bg-white">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 border-2 border-black rounded mb-4"></div>
+                <h3 className="text-lg font-semibold mb-3 text-black">Регистрация сделки</h3>
+                <p className="text-gray-600 text-sm">
+                  Сопровождение процесса регистрации в Росреестре и контроль на всех этапах
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-gray-300 bg-white md:col-span-2">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 border-2 border-black rounded mb-4"></div>
+                <h3 className="text-lg font-semibold mb-3 text-black">Постсопровождение</h3>
+                <p className="text-gray-600 text-sm">
+                  Юридическая поддержка после завершения сделки, помощь в решении возможных споров и вопросов
                 </p>
               </CardContent>
             </Card>
           </div>
-
-          <Card className="border-2 border-gray-300 bg-white mt-8">
-            <CardContent className="p-8">
-              <div className="flex flex-col md:flex-row items-center gap-6">
-                <div className="flex-grow">
-                  <h3 className="text-xl font-semibold mb-2 text-black">Комплексный пакет «Под ключ»</h3>
-                  <p className="text-gray-600 text-sm">Оформление аренды + юридическое сопровождение + страхование сделки. Экономия до 30% при покупке пакета</p>
-                </div>
-                <div className="flex-shrink-0 text-center">
-                  <div className="text-3xl font-bold text-black mb-2">от 35 000 ₽</div>
-                  <Button className="bg-black text-white hover:bg-gray-800">Заказать пакет</Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </section>
 
