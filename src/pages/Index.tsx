@@ -227,27 +227,28 @@ const Index = () => {
             <p className="text-gray-600">Четыре последовательных шага процесса взаимодействия</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
-            {[
-              { title: 'Этап 1', desc: 'Описание первого этапа процесса' },
-              { title: 'Этап 2', desc: 'Описание второго этапа процесса' },
-              { title: 'Этап 3', desc: 'Описание третьего этапа процесса' },
-              { title: 'Этап 4', desc: 'Описание четвёртого этапа процесса' }
-            ].map((item, i) => (
-              <Card key={i} className="border-2 border-gray-300 bg-white">
-                <CardContent className="pt-6">
-                  <div className="flex gap-4">
-                    <div className="w-10 h-10 border-2 border-black rounded flex items-center justify-center font-bold flex-shrink-0">
-                      {i + 1}
-                    </div>
-                    <div>
+          <div className="relative">
+            <div className="grid md:grid-cols-4 gap-8">
+              {[
+                { title: 'Этап 1', desc: 'Описание первого этапа процесса' },
+                { title: 'Этап 2', desc: 'Описание второго этапа процесса' },
+                { title: 'Этап 3', desc: 'Описание третьего этапа процесса' },
+                { title: 'Этап 4', desc: 'Описание четвёртого этапа процесса' }
+              ].map((item, i) => (
+                <div key={i} className="relative">
+                  <div className="absolute -top-6 left-0 w-16 h-16 border-4 border-black bg-white rounded-full flex items-center justify-center text-2xl font-bold z-10">
+                    {i + 1}
+                  </div>
+                  <Card className="border-2 border-gray-300 bg-white pt-12 h-full">
+                    <CardContent className="pt-6">
                       <h3 className="text-lg font-semibold mb-2 text-black">{item.title}</h3>
                       <p className="text-gray-600 text-sm">{item.desc}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
+            <div className="hidden md:block absolute top-2 left-8 right-8 h-0.5 bg-gray-300 -z-0"></div>
           </div>
         </div>
       </section>
@@ -259,22 +260,38 @@ const Index = () => {
             <p className="text-gray-600">Три отзыва клиентов с именами и ролями</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-6 gap-6">
+            <Card className="border-2 border-black bg-black text-white md:col-span-2 md:row-span-2">
+              <CardContent className="pt-6 h-full flex flex-col justify-between">
+                <div>
+                  <div className="w-16 h-16 border-2 border-white rounded-full mb-4"></div>
+                  <p className="text-sm mb-4 leading-relaxed">"Текст отзыва о работе с компанией и полученном результате. Развёрнутое мнение клиента"</p>
+                </div>
+                <div>
+                  <p className="font-semibold">Клиент 1</p>
+                  <p className="text-sm text-gray-300">Роль</p>
+                </div>
+              </CardContent>
+            </Card>
+
             {[
-              { name: 'Клиент 1', role: 'Роль', text: 'Текст отзыва о работе с компанией и полученном результате' },
               { name: 'Клиент 2', role: 'Роль', text: 'Текст отзыва о работе с компанией и полученном результате' },
               { name: 'Клиент 3', role: 'Роль', text: 'Текст отзыва о работе с компанией и полученном результате' }
             ].map((review, i) => (
-              <Card key={i} className="border-2 border-gray-300">
+              <Card key={i} className="border-2 border-gray-300 md:col-span-4">
                 <CardContent className="pt-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 border-2 border-black rounded-full"></div>
-                    <div>
-                      <p className="font-semibold text-black">{review.name}</p>
-                      <p className="text-sm text-gray-600">{review.role}</p>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 border-2 border-black rounded-full flex-shrink-0"></div>
+                    <div className="flex-grow">
+                      <div className="flex items-center justify-between mb-2">
+                        <div>
+                          <p className="font-semibold text-black">{review.name}</p>
+                          <p className="text-sm text-gray-600">{review.role}</p>
+                        </div>
+                      </div>
+                      <p className="text-sm text-gray-600">"{review.text}"</p>
                     </div>
                   </div>
-                  <p className="text-sm text-gray-600">"{review.text}"</p>
                 </CardContent>
               </Card>
             ))}
@@ -290,17 +307,30 @@ const Index = () => {
               <p className="text-gray-600">Четыре вопроса-ответа для снятия возражений</p>
             </div>
 
-            <div className="space-y-4">
+            <div className="grid md:grid-cols-2 gap-6">
               {[
                 { q: 'Вопрос 1', a: 'Развёрнутый ответ на первый частый вопрос пользователей' },
                 { q: 'Вопрос 2', a: 'Развёрнутый ответ на второй частый вопрос пользователей' },
                 { q: 'Вопрос 3', a: 'Развёрнутый ответ на третий частый вопрос пользователей' },
                 { q: 'Вопрос 4', a: 'Развёрнутый ответ на четвёртый частый вопрос пользователей' }
               ].map((item, i) => (
-                <Card key={i} className="border-2 border-gray-300 bg-white">
+                <Card key={i} className={`border-2 bg-white ${
+                  i === 0 ? 'border-black md:col-span-2' : 'border-gray-300'
+                }`}>
                   <CardContent className="p-6">
-                    <h3 className="font-semibold text-black mb-2">{item.q}</h3>
-                    <p className="text-sm text-gray-600">{item.a}</p>
+                    <div className="flex items-start gap-4">
+                      <div className={`w-10 h-10 flex-shrink-0 rounded flex items-center justify-center font-bold ${
+                        i === 0 ? 'bg-black text-white' : 'border-2 border-black text-black'
+                      }`}>
+                        {i + 1}
+                      </div>
+                      <div className="flex-grow">
+                        <h3 className={`font-semibold mb-2 ${
+                          i === 0 ? 'text-xl text-black' : 'text-lg text-black'
+                        }`}>{item.q}</h3>
+                        <p className="text-sm text-gray-600">{item.a}</p>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               ))}
