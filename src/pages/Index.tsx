@@ -6,42 +6,40 @@ import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [email, setEmail] = useState('');
-  const [searchType, setSearchType] = useState('rent');
 
   return (
     <div className="min-h-screen bg-white">
-      <header className="border-b border-gray-300 py-4 sticky top-0 bg-white z-50">
+      <header className="border-b border-gray-300 py-4">
         <div className="container mx-auto px-4 flex items-center justify-between">
           <div className="text-xl font-bold text-black">ДомПро</div>
           <nav className="hidden md:flex gap-6 text-sm">
             <a href="#search" className="text-gray-700 hover:text-black">Поиск жилья</a>
-            <a href="#services" className="text-gray-700 hover:text-black">Услуги</a>
+            <a href="#owners" className="text-gray-700 hover:text-black">Владельцам</a>
             <a href="#invest" className="text-gray-700 hover:text-black">Инвесторам</a>
-            <a href="#reviews" className="text-gray-700 hover:text-black">Отзывы</a>
-            <a href="#faq" className="text-gray-700 hover:text-black">Вопросы</a>
+            <a href="#contacts" className="text-gray-700 hover:text-black">Контакты</a>
           </nav>
-          <Button className="bg-black text-white hover:bg-gray-800">
+          <Button variant="outline" className="hidden md:block border-black text-black hover:bg-black hover:text-white">
             Связаться
           </Button>
         </div>
       </header>
 
-      <section className="py-20 border-b border-gray-300">
+      <section className="py-16 md:py-24 border-b border-gray-300">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">
-              Жильё для семей, владельцев и инвесторов
+              Удобное жильё для семей и инвесторов
             </h1>
             <p className="text-lg text-gray-600 mb-8">
-              Найдите квартиру, сдайте жильё или инвестируйте в недвижимость
+              Прозрачная аренда, проверенные арендаторы и высокодоходные инвестиции в недвижимость
             </p>
             <div className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
               <Input 
-                placeholder="Поиск жилья по району или адресу"
+                placeholder="Введите город или район" 
                 className="flex-1 border-gray-400"
               />
               <Button className="bg-black text-white hover:bg-gray-800">
-                Найти
+                Найти жильё
               </Button>
             </div>
           </div>
@@ -50,302 +48,107 @@ const Index = () => {
 
       <section id="search" className="py-16 border-b border-gray-300">
         <div className="container mx-auto px-4">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold mb-2 text-black">Поиск жилья</h2>
-            <p className="text-gray-600">Безопасные районы, удобные фильтры и проверенные объекты</p>
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold mb-2 text-black">Поиск жилья для арендаторов</h2>
+            <p className="text-gray-600">Подходящие варианты для семей и студентов</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <Card className="border-2 border-gray-300">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 border-2 border-black rounded mb-4 flex items-center justify-center">
-                  <Icon name="Home" size={24} />
-                </div>
-                <h3 className="text-lg font-semibold mb-2 text-black">Для семей</h3>
-                <p className="text-gray-600 text-sm mb-4">Карты с детскими садами, школами и парками. Фильтры по безопасности районов и близости к инфраструктуре</p>
-                <ul className="space-y-2 text-xs text-gray-600">
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
-                    Оценка безопасности района
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
-                    Расстояние до школ и садиков
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
-                    Отзывы других семей
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-black bg-black text-white">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 border-2 border-white rounded mb-4 flex items-center justify-center">
-                  <Icon name="GraduationCap" size={24} />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">Для студентов</h3>
-                <p className="text-gray-300 text-sm mb-4">Доступные варианты рядом с университетами, общежитиями и станциями метро. Гибкие условия аренды</p>
-                <ul className="space-y-2 text-xs text-gray-300">
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                    Фильтр по бюджету
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                    Близость к вузам
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                    Аренда с соседями
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-gray-300">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 border-2 border-black rounded mb-4 flex items-center justify-center">
-                  <Icon name="TrendingUp" size={24} />
-                </div>
-                <h3 className="text-lg font-semibold mb-2 text-black">Для инвесторов</h3>
-                <p className="text-gray-600 text-sm mb-4">Аналитика доходности по районам, прогнозы роста цен и готовые расчёты окупаемости инвестиций</p>
-                <ul className="space-y-2 text-xs text-gray-600">
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
-                    Калькулятор доходности
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
-                    Рейтинг районов
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
-                    Прогноз роста
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            {[
+              { title: 'Для семей с детьми', desc: 'Просторные квартиры в жилых районах' },
+              { title: 'Для студентов', desc: 'Доступное жильё рядом с вузами' },
+              { title: 'Проверенные варианты', desc: 'Все объекты проходят верификацию' }
+            ].map((item, i) => (
+              <Card key={i} className="border-2 border-gray-300">
+                <CardContent className="pt-6">
+                  <div className="w-12 h-12 border-2 border-black rounded mb-4"></div>
+                  <h3 className="text-lg font-semibold mb-2 text-black">{item.title}</h3>
+                  <p className="text-gray-600 text-sm">{item.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
 
-          <Card className="border-2 border-black bg-black text-white">
-            <CardContent className="p-8 md:p-10">
-              <div className="max-w-2xl mx-auto text-center">
-                <div className="w-16 h-16 border-2 border-white rounded mx-auto mb-6 flex items-center justify-center">
-                  <Icon name="FileText" size={32} />
-                </div>
-                <h3 className="text-2xl font-bold mb-3">Бесплатный гид по аренде жилья</h3>
-                <p className="text-gray-300 mb-6">Скачайте подробное руководство: как найти безопасное жильё, проверить документы, избежать мошенников и заключить выгодный договор</p>
-                <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                  <Input 
-                    placeholder="Ваш email" 
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 border-white bg-white/10 text-white placeholder:text-gray-400"
-                  />
-                  <Button className="bg-white text-black hover:bg-gray-200">
-                    Скачать гид
-                  </Button>
-                </div>
+          <Card className="border-2 border-gray-400">
+            <CardContent className="p-8 text-center">
+              <div className="w-12 h-12 border-2 border-black rounded mx-auto mb-4"></div>
+              <h3 className="text-xl font-semibold mb-3 text-black">Бесплатный гид по аренде жилья</h3>
+              <p className="text-gray-600 mb-6">Получите подробное руководство для семей с детьми и студентов</p>
+              <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <Input 
+                  placeholder="Ваш email" 
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1 border-gray-400"
+                />
+                <Button className="bg-black text-white hover:bg-gray-800">Получить гид</Button>
               </div>
             </CardContent>
           </Card>
         </div>
       </section>
 
-      <section id="services" className="py-16 border-b border-gray-300 bg-gray-50">
+      <section id="owners" className="py-16 border-b border-gray-300 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold mb-2 text-black">Безопасная аренда</h2>
-            <p className="text-gray-600">Проверяем арендаторов и защищаем владельцев</p>
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold mb-2 text-black">Владельцам недвижимости</h2>
+            <p className="text-gray-600">Сдавайте жильё с гарантией безопасности</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <Card className="border-2 border-gray-300">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 border-2 border-black rounded mb-4 flex items-center justify-center">
-                  <Icon name="UserCheck" size={24} />
-                </div>
-                <h3 className="text-lg font-semibold mb-2 text-black">Проверка арендаторов</h3>
-                <p className="text-gray-600 text-sm mb-4">Полная проверка истории, документов и платёжеспособности перед заключением договора</p>
-                <ul className="space-y-2 text-xs text-gray-600">
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
-                    История арендных отношений
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
-                    Проверка документов
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
-                    Финансовая стабильность
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-black bg-black text-white">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 border-2 border-white rounded mb-4 flex items-center justify-center">
-                  <Icon name="Shield" size={24} />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">Гарантия платежей</h3>
-                <p className="text-gray-300 text-sm mb-4">Страхование от неуплаты аренды и юридическое сопровождение при возникновении споров</p>
-                <ul className="space-y-2 text-xs text-gray-300">
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                    Страхование до 6 месяцев
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                    Защита от неплательщиков
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                    Юридическая помощь
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-gray-300">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 border-2 border-black rounded mb-4 flex items-center justify-center">
-                  <Icon name="FileCheck" size={24} />
-                </div>
-                <h3 className="text-lg font-semibold mb-2 text-black">Юридическая поддержка</h3>
-                <p className="text-gray-600 text-sm mb-4">Подготовка договоров, регистрация в Росреестре и консультации на всех этапах</p>
-                <ul className="space-y-2 text-xs text-gray-600">
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
-                    Подготовка договоров
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
-                    Регистрация сделки
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
-                    Консультации юристов
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            {[
+              { title: 'Проверка арендаторов', desc: 'Полная верификация каждого арендатора' },
+              { title: 'Гарантия платежей', desc: 'Страхование от неуплаты аренды' },
+              { title: 'Юридическая поддержка', desc: 'Помощь в оформлении договоров' }
+            ].map((item, i) => (
+              <Card key={i} className="border-2 border-gray-300 bg-white">
+                <CardContent className="pt-6">
+                  <div className="w-12 h-12 border-2 border-black rounded mb-4"></div>
+                  <h3 className="text-lg font-semibold mb-2 text-black">{item.title}</h3>
+                  <p className="text-gray-600 text-sm">{item.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
       <section id="invest" className="py-16 border-b border-gray-300">
         <div className="container mx-auto px-4">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold mb-2 text-black">Недвижимость как бизнес</h2>
-            <p className="text-gray-600">Арендуйте, сдавайте или инвестируйте с выгодой</p>
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold mb-2 text-black">Инвестиции в недвижимость</h2>
+            <p className="text-gray-600">Высокая доходность и прозрачная аналитика</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <Card className="border-2 border-gray-300">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 border-2 border-black rounded mb-4 flex items-center justify-center">
-                  <Icon name="Users" size={24} />
-                </div>
-                <h3 className="text-lg font-semibold mb-2 text-black">Для арендаторов</h3>
-                <p className="text-gray-600 text-sm mb-4">Честные цены без скрытых комиссий, гибкие условия оплаты и возможность долгосрочной аренды со скидками</p>
-                <ul className="space-y-2 text-xs text-gray-600 mb-4">
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
-                    Без комиссии агентам
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
-                    Рассрочка первого взноса
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
-                    Скидки за долгий срок
-                  </li>
-                </ul>
-                <Button variant="outline" className="w-full border-black text-black hover:bg-black hover:text-white text-sm">
-                  Подобрать жильё
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-black bg-black text-white">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 border-2 border-white rounded mb-4 flex items-center justify-center">
-                  <Icon name="DollarSign" size={24} />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">Для владельцев</h3>
-                <p className="text-gray-300 text-sm mb-4">Гарантированный ежемесячный доход, проверенные арендаторы и профессиональное управление вашим объектом</p>
-                <ul className="space-y-2 text-xs text-gray-300 mb-4">
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                    Доход в срок каждый месяц
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                    Проверка арендаторов
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                    Контроль состояния жилья
-                  </li>
-                </ul>
-                <Button variant="outline" className="w-full border-white text-white hover:bg-white hover:text-black text-sm">
-                  Сдать квартиру
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-gray-300">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 border-2 border-black rounded mb-4 flex items-center justify-center">
-                  <Icon name="TrendingUp" size={24} />
-                </div>
-                <h3 className="text-lg font-semibold mb-2 text-black">Для инвесторов</h3>
-                <p className="text-gray-600 text-sm mb-4">Точный расчёт доходности с учётом всех расходов, прогнозы роста районов и полное сопровождение покупки</p>
-                <ul className="space-y-2 text-xs text-gray-600 mb-4">
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
-                    Доходность от 7% годовых
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
-                    Районы с ростом цен
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-black rounded-full"></div>
-                    Налоговая оптимизация
-                  </li>
-                </ul>
-                <Button variant="outline" className="w-full border-black text-black hover:bg-black hover:text-white text-sm">
-                  Рассчитать доход
-                </Button>
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-4 gap-6 mb-12">
+            {[
+              { value: '12-15%', label: 'Средняя доходность' },
+              { value: '500+', label: 'Объектов в портфеле' },
+              { value: '98%', label: 'Заполняемость' },
+              { value: '24/7', label: 'Поддержка инвесторов' }
+            ].map((stat, i) => (
+              <Card key={i} className="border-2 border-gray-300 text-center">
+                <CardContent className="pt-6">
+                  <div className="text-3xl font-bold text-black mb-2">{stat.value}</div>
+                  <p className="text-sm text-gray-600">{stat.label}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
 
-          <Card className="border-2 border-gray-300 bg-gradient-to-br from-gray-900 to-black text-white">
-            <CardContent className="p-8 md:p-10">
-              <div className="max-w-2xl mx-auto text-center">
-                <div className="w-16 h-16 border-2 border-white rounded mx-auto mb-6 flex items-center justify-center">
-                  <Icon name="Calculator" size={32} />
-                </div>
-                <h3 className="text-2xl font-bold mb-3">Бесплатная консультация по инвестициям</h3>
-                <p className="text-gray-300 mb-6">Поможем выбрать объект с максимальной доходностью, рассчитаем прибыль и окупаемость, расскажем о налогах и юридических нюансах инвестиций в недвижимость</p>
-                <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                  <Input 
-                    placeholder="Ваш телефон" 
-                    type="tel"
-                    className="flex-1 border-white bg-white/10 text-white placeholder:text-gray-400"
-                  />
-                  <Button className="bg-white text-black hover:bg-gray-200">
-                    Получить консультацию
-                  </Button>
-                </div>
+          <Card className="border-2 border-gray-400">
+            <CardContent className="p-8 text-center">
+              <div className="w-12 h-12 border-2 border-black rounded mx-auto mb-4"></div>
+              <h3 className="text-xl font-semibold mb-3 text-black">Консультация по инвестициям</h3>
+              <p className="text-gray-600 mb-6">Получите персональный расчёт доходности от эксперта</p>
+              <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <Input 
+                  placeholder="Ваш телефон" 
+                  type="tel"
+                  className="flex-1 border-gray-400"
+                />
+                <Button className="bg-black text-white hover:bg-gray-800">Получить консультацию</Button>
               </div>
             </CardContent>
           </Card>
@@ -354,91 +157,22 @@ const Index = () => {
 
       <section className="py-16 border-b border-gray-300 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold mb-2 text-black">Юридическое сопровождение</h2>
-            <p className="text-gray-600">Безопасность сделки на каждом этапе</p>
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold mb-2 text-black">Гарантия безопасности</h2>
+            <p className="text-gray-600">Защита от всех видов рисков</p>
           </div>
-
-          <div className="grid md:grid-cols-4 gap-6">
-            <Card className="border-2 border-gray-300">
-              <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 border-2 border-black rounded mx-auto mb-4"></div>
-                <h3 className="text-base font-semibold mb-2 text-black">Проверка документов</h3>
-                <p className="text-gray-600 text-xs">Экспертиза объекта</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-black bg-black text-white">
-              <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 border-2 border-white rounded mx-auto mb-4"></div>
-                <h3 className="text-base font-semibold mb-2">Подготовка договоров</h3>
-                <p className="text-gray-300 text-xs">С учётом интересов</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-gray-300">
-              <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 border-2 border-black rounded mx-auto mb-4"></div>
-                <h3 className="text-base font-semibold mb-2 text-black">Регистрация</h3>
-                <p className="text-gray-600 text-xs">В Росреестре</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-gray-300">
-              <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 border-2 border-black rounded mx-auto mb-4"></div>
-                <h3 className="text-base font-semibold mb-2 text-black">Поддержка</h3>
-                <p className="text-gray-600 text-xs">После сделки</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <section id="reviews" className="py-16 border-b border-gray-300">
-        <div className="container mx-auto px-4">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold mb-2 text-black">Отзывы</h2>
-            <p className="text-gray-600">Что говорят наши клиенты</p>
-          </div>
-
+          
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: 'Екатерина М.', role: 'Семья', text: 'Нашли квартиру рядом со школой за неделю. Удобные фильтры помогли' },
-              { name: 'Дмитрий К.', role: 'Владелец', text: 'Проверяют арендаторов и страхуют платежи. Спокоен за свою квартиру' },
-              { name: 'Андрей С.', role: 'Инвестор', text: 'Калькулятор помог выбрать объекты с доходностью 9%' }
-            ].map((review, i) => (
-              <Card key={i} className="border-2 border-gray-300">
-                <CardContent className="p-6">
-                  <p className="text-gray-700 mb-4 text-sm">"{review.text}"</p>
-                  <div className="border-t border-gray-300 pt-4">
-                    <p className="font-semibold text-black text-sm">{review.name}</p>
-                    <p className="text-gray-600 text-xs">{review.role}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="faq" className="py-16 border-b border-gray-300 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold mb-2 text-black">Вопросы</h2>
-            <p className="text-gray-600">Ответы на частые вопросы</p>
-          </div>
-
-          <div className="max-w-2xl mx-auto space-y-4">
-            {[
-              { q: 'Как проверяются арендаторы?', a: 'История, документы и финансовая стабильность' },
-              { q: 'Что входит в юридическое сопровождение?', a: 'Проверка, договоры, регистрация и поддержка' },
-              { q: 'Какие гарантии безопасности?', a: 'Страхование, проверка и юридическая защита' }
+              { title: 'Страхование рисков', desc: 'Полное страхование от финансовых потерь' },
+              { title: 'Безопасные расчёты', desc: 'Все платежи через защищённую систему' },
+              { title: 'Гарантия возврата', desc: 'Компенсация в случае срыва сделки' }
             ].map((item, i) => (
-              <Card key={i} className="border-2 border-gray-300">
-                <CardContent className="p-6">
-                  <h3 className="text-base font-semibold mb-2 text-black">{item.q}</h3>
-                  <p className="text-gray-600 text-sm">{item.a}</p>
+              <Card key={i} className="border-2 border-gray-300 text-center bg-white">
+                <CardContent className="pt-6">
+                  <div className="w-12 h-12 border-2 border-black rounded mx-auto mb-4"></div>
+                  <h3 className="text-lg font-semibold mb-2 text-black">{item.title}</h3>
+                  <p className="text-gray-600 text-sm">{item.desc}</p>
                 </CardContent>
               </Card>
             ))}
@@ -446,56 +180,81 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-16 border-b border-gray-300">
+      <section id="contacts" className="py-16 border-b border-gray-300">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4 text-black">Начните прямо сейчас</h2>
-            <p className="text-gray-600 mb-8">Найдите, сдайте или инвестируйте</p>
-            <Button className="bg-black text-white hover:bg-gray-800 px-8">
-              Связаться
-            </Button>
+          <div className="max-w-3xl mx-auto">
+            <div className="mb-12 text-center">
+              <h2 className="text-3xl font-bold mb-2 text-black">Контакты</h2>
+              <p className="text-gray-600">Свяжитесь с нами удобным способом</p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              {[
+                { title: '+7 (495) 123-45-67', desc: 'Звонки с 9:00 до 21:00' },
+                { title: 'info@dompro.ru', desc: 'Ответим в течение часа' },
+                { title: 'Онлайн-чат', desc: 'Круглосуточная поддержка' }
+              ].map((contact, i) => (
+                <Card key={i} className="border-2 border-gray-300 text-center">
+                  <CardContent className="pt-6">
+                    <div className="w-10 h-10 border-2 border-black rounded mx-auto mb-3"></div>
+                    <h3 className="font-semibold mb-1 text-black">{contact.title}</h3>
+                    <p className="text-sm text-gray-600">{contact.desc}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <Card className="border-2 border-gray-400">
+              <CardContent className="p-8">
+                <h3 className="text-lg font-bold mb-6 text-center text-black">Напишите нам</h3>
+                <div className="space-y-4">
+                  <Input placeholder="Ваше имя" className="border-gray-400" />
+                  <Input placeholder="Email" type="email" className="border-gray-400" />
+                  <Input placeholder="Сообщение" className="border-gray-400" />
+                  <Button className="w-full bg-black text-white hover:bg-gray-800">
+                    Отправить
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      <footer id="contacts" className="py-12 bg-gray-50">
+      <footer className="py-12 bg-black text-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="text-xl font-bold text-black mb-4">ДомПро</div>
-              <p className="text-gray-600 text-sm">Платформа для поиска жилья, проверенных арендаторов и выгодных инвестиций в недвижимость</p>
+              <div className="text-xl font-bold mb-4">ДомПро</div>
+              <p className="text-sm text-gray-400">Платформа для безопасной аренды и инвестиций</p>
             </div>
             <div>
-              <h4 className="font-semibold text-black mb-4">Для арендаторов</h4>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li><a href="#" className="hover:text-black">Поиск жилья</a></li>
-                <li><a href="#" className="hover:text-black">Гид по аренде</a></li>
-                <li><a href="#" className="hover:text-black">Безопасные районы</a></li>
+              <h4 className="font-semibold mb-4">Услуги</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li><a href="#search">Поиск жилья</a></li>
+                <li><a href="#owners">Для владельцев</a></li>
+                <li><a href="#invest">Инвестиции</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-black mb-4">Для владельцев</h4>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li><a href="#" className="hover:text-black">Сдать квартиру</a></li>
-                <li><a href="#" className="hover:text-black">Проверка арендаторов</a></li>
-                <li><a href="#" className="hover:text-black">Гарантия платежей</a></li>
+              <h4 className="font-semibold mb-4">Компания</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Блог</a></li>
+                <li><a href="#">Партнёрам</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-black mb-4">Для инвесторов</h4>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li><a href="#" className="hover:text-black">Калькулятор дохода</a></li>
-                <li><a href="#" className="hover:text-black">Доходные районы</a></li>
-                <li><a href="#" className="hover:text-black">Консультация</a></li>
+              <h4 className="font-semibold mb-4">Поддержка</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li><a href="#">Помощь</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Условия использования</a></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-600 text-sm">© 2024 ДомПро. Все права защищены</p>
-            <div className="flex gap-6">
-              <a href="#" className="text-gray-600 hover:text-black text-sm">Политика конфиденциальности</a>
-              <a href="#" className="text-gray-600 hover:text-black text-sm">Условия использования</a>
-            </div>
+          <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+            <p>© 2024 ДомПро. Все права защищены.</p>
           </div>
         </div>
       </footer>
